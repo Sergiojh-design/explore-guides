@@ -1,0 +1,63 @@
+{
+    "$type": "contentModule",
+    "friendlyName": "Explore Guides",
+    "name": "explore-guides",
+    "description": "Module to display a series of content/cards",
+    "categories": ["explore-guides"],
+    "tags": ["Additional tags go here"],
+    "dataActions": {},    
+    "config": {
+        "featuredContentList": {
+            "friendlyName": "Featured Content list",
+            "description": "A list of all mattress guides",
+            "type": "array",
+            "required": true,
+            "items": {
+                "friendlyName": "Featured Content Data",
+                "description": "Featured Content Data",
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "friendlyName": "Name",
+                        "description": "Featured Content Name",
+                        "type": "richText",
+                        "required": true
+                    },
+                    "description": {
+                        "friendlyName": "Description",
+                        "description": "Sub copy",
+                        "type": "richText"
+                    },
+                    "link": {
+                        "friendlyName": "Content link",
+                        "description": "Link to page",
+                        "$ref": "@msdyn365-commerce-modules/definitions/dist/src/ActionLink.json#/definitions/actionLink",
+                        "required": true
+                    },
+                    "image": {
+                        "friendlyName": "Background Image",
+                        "description": "Background image",
+                        "type": "image",
+                        "required": true
+                    },
+                    "useDynamicImages": {
+                        "friendlyName": "Use Dymanic Images",
+                        "description": "option to use dynamic images",
+                        "type": "boolean"
+                    },
+                    "dynamicImages": {
+                        "friendlyName": "Dynamic Images",
+                        "description": "Optional Image configurations for each view",
+                        "$ref": "../../themes/sergiosthemes/custom-definitions/ImageSizes.json#/definitions/dynamicImages"
+                    }
+                }
+            }
+        }
+    },
+    "resources": {
+        "resourceKey": {
+            "comment": "resource description",
+            "value": "resource value"
+        }
+    }
+}

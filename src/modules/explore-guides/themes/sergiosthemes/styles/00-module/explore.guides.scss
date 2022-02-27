@@ -1,0 +1,305 @@
+$card-background: #DDE5F6;
+$color-sleep-blue: #0B1232;
+.explore-guides {
+    @include breakpoint(1025px) {
+        display: flex;
+    }
+
+    .column1 {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(1025px) {
+            width: 25.417%;
+            padding-right: 1.75%;
+        }
+    }
+
+    .column2 {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(1025px) {
+            width: 33.917%;
+            padding-right: 1.75%;
+        }
+    }
+
+    .column3 {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(1025px) {
+            width: 40.67%;
+        }
+    }
+
+    &__card-shape {
+        &-small-card,
+        &-medium-card,
+        &-large-card {
+            background-color: $card-background;
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            width: 160px;
+            height: 297px;
+
+            &-image {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        @include breakpoint(768px) {
+            &-small-card,
+            &-medium-card,
+            &-large-card {
+                width: 176px;
+
+                &-image {
+                    img {
+                        width: 100%;
+                        height: 160px;
+                    }
+                }
+            }
+        }
+
+        @include breakpoint(1025px) {
+            &-small-card,
+            &-medium-card,
+            &-large-card {
+                border-radius: 5px;
+                width: initial;
+                height: initial;
+                overflow: hidden;
+
+                &-image {
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    transition: transform .35s ease;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__text-container {
+        &-small-card,
+        &-medium-card,
+        &-large-card {
+            padding-top: 15px;
+            padding-left: 10px;
+            padding-right: 21px;
+            line-height: 1;
+            color: $color-sleep-blue;
+            white-space: initial;
+            text-align: initial;
+        }
+
+        @include breakpoint(1025px) {
+            &-small-card {
+                padding: 10.791% 0 11.87% 10.791%;
+                width: 100%;
+                line-height: 0;
+            }
+
+            &-medium-card {
+                padding: 7.895% 0 8.685% 7.895%;
+                width: 100%;
+                line-height: 0;
+            }
+
+            &-large-card {
+                padding: 6.226% 0 6.849% 6.226%;
+                width: 100%;
+                line-height: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 14px;
+        line-height: 16.8px;
+        font-weight: 500;
+        display: inline-block;
+        padding-bottom: 8.6px;
+
+        @include breakpoint(1025px) {
+            font-size: 20px;
+            line-height: 24px;
+            white-space: nowrap;
+            padding-bottom: 0;
+        }
+    }
+
+    &__description-container {
+        &-small-card,
+        &-medium-card,
+        &-large-card {
+            display: initial;
+            font-size: 12px;
+            line-height: 15.6px;
+        }
+
+        @include breakpoint(1025px) {
+            &-small-card {
+                position: absolute;
+                font-size: 20px;
+                line-height: 24px;
+                right: 11.873%;
+                left: 10.795%;
+                transform: translate(0, 80%);
+                transition: transform .35s ease;
+            }
+
+            &-medium-card {
+                position: absolute;
+                font-size: 20px;
+                line-height: 24px;
+                right: 8.686%;
+                left: 7.898%;
+                transform: translate(0, 160%);
+                transition: transform .35s ease;
+            }
+
+            &-large-card {
+                position: absolute;
+                font-size: 20px;
+                line-height: 24px;
+                right: 28.2%;
+                left: 6.228%;
+                transform: translate(0, 160%);
+                transition: transform .35s ease;
+            }
+        }
+    }
+
+    &__arrow {
+        @include add-icon($icon-arrow-right);
+        position: absolute;
+        right: 13.25px;
+        bottom: 28.2px;
+
+        @include breakpoint(1025px) {
+            &-small-card {
+                right: 11.96%;
+                bottom: 13.58%;
+            }
+
+            &-medium-card {
+                right: 8.753%;
+                bottom: 13.58%;
+            }
+
+            &-large-card {
+                right: 6.9%;
+                bottom: 6.498%;
+            }
+        }
+    }
+
+    &__bottom-margin {
+        @include breakpoint(1025px) {
+            &-small-card {
+                margin-bottom: 6.695%;
+            }
+        
+            &-medium-card {
+                margin-bottom: 4.925%;
+            }
+        }
+    }
+
+    &__link {
+        margin-right: 4px;
+        padding: 3px;
+
+        @include breakpoint(768px) {
+            margin-right: 14px;
+        }
+
+        @include breakpoint(1025px) {
+            margin-right: 0;
+        }
+
+        &:focus {
+            padding: 0;
+            border: 3px solid #2D2926 !important;
+            border-radius: 5px 5px 0 0;
+
+            @include breakpoint(1025px) {
+                border-radius: 5px;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            color: inherit;
+            text-decoration: none;
+
+            @include breakpoint(1025px) {
+                .explore-guides__card-shape-small-card-image, 
+                .explore-guides__card-shape-medium-card-image,
+                .explore-guides__card-shape-large-card-image {
+                    position: absolute;
+                    transform: translate(0, -105%);
+                    transition: transform .35s ease;
+                }
+
+                .explore-guides__description-container {
+                    &-small-card {
+                        position: absolute;
+                        top: 29.49%;
+                        right: 11.873%;
+                        left: 10.795%;
+                        transform: translate(0, 0);
+                        transition: transform .35s ease;
+                    }
+
+                    &-medium-card {
+                        position: absolute;
+                        top: 29.49%;
+                        right: 8.686%;
+                        left: 7.898%;
+                        transform: translate(0, 0);
+                        transition: transform .35s ease;
+                    }
+
+                    &-large-card {
+                        position: absolute;
+                        top: 14.116%;
+                        right: 28.2%;
+                        left: 6.228%;
+                        transform: translate(0, 0);
+                        transition: transform .35s ease;
+                    }
+                }
+
+                .explore-guides__text-container {
+                    &-small-card {
+                        padding-right: 11.87%;
+                        padding-bottom: 80.6%;
+                    }
+
+                    &-medium-card {
+                        padding-right: 8.685%;
+                        padding-bottom: 58.97%;
+                    }
+
+                    &-large-card {
+                        padding-right: 8.685%;
+                        padding-bottom: 109.36%;
+                    }
+                }
+            }
+        }
+    }
+}
